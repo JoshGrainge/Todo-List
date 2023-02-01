@@ -6,6 +6,7 @@ const addProjectBtn = document.querySelector("#add-project-button");
 const addTaskBtn = document.querySelector("#add-task-button");
 
 let projects = [];
+let currentProject;
 
 addProjectBtn.addEventListener("click", () => {
   projects.push(createProject("test"));
@@ -15,10 +16,15 @@ addProjectBtn.addEventListener("click", () => {
 });
 
 addTaskBtn.addEventListener("click", () => {
+  // TEST SET CURRENT PROJECT. WILL REMOVE LATER
+  currentProject = projects[0];
+
   // Check if there is a current selected project, and if not stop execution
-  projects[0].tasks.push(createTask("test, this is a test, now, HIGH"));
-  updateTaskElements(projects);
-  printArray(projects[0].tasks);
+  if (currentProject) {
+    projects[0].tasks.push(createTask("test", "this is a test", "now", "HIGH"));
+    updateTaskElements(currentProject, projects);
+    printArray(projects[0].tasks);
+  }
 });
 
 function printArray(arr) {
