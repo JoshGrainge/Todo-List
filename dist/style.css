@@ -66,6 +66,16 @@ h2 {
 .content {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+#add-task-button {
+  height: 40px;
+  width: 40px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 .task-container {
