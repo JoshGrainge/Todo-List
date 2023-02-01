@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  --button-color: rgb(0, 174, 255);
+  --button-text-color: #fff;
+
+  --button-hover-color: rgb(79, 199, 255);
+  --button-click-color: rgb(0, 137, 201);
+
+  border: 1px solid black;
+}
+
+button {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--button-hover-color);
+}
+
+button:active {
+  background-color: var(--button-click-color);
+}
+
+.circle-button {
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  padding: 30px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.sidebar {
+  display: grid;
+  max-height: 100vh;
+  grid-template-rows: 2fr 1fr 8fr 2fr;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.projects-panel {
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-container {
+  flex: 1 1 0;
+}
+
+#add-project-button {
+  height: 40px;
+  width: 40px;
+}
