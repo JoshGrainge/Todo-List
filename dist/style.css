@@ -72,6 +72,7 @@ h2 {
 .project-button {
   width: 100%;
   height: 50px;
+  margin-bottom: 3px;
 }
 
 .content {
