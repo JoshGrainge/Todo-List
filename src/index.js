@@ -21,7 +21,9 @@ addTaskBtn.addEventListener("click", () => {
 
   // Check if there is a current selected project, and if not stop execution
   if (currentProject) {
-    projects[0].tasks.push(createTask("test", "this is a test", "now", "HIGH"));
+    projects[0].tasks.push(
+      createTask("test", "this is a test", "02/02/22", "red")
+    );
     updateTaskElements(currentProject, projects);
     printArray(projects[0].tasks);
   }

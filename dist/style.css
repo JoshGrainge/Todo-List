@@ -8,7 +8,11 @@
   --button-hover-color: rgb(79, 199, 255);
   --button-click-color: rgb(0, 137, 201);
 
-  border: 1px solid black;
+  --thin-border: 1px solid black;
+
+  font-family: Helvetica, monospace, sans-serif;
+
+  /* border: 1px solid black; */
 }
 
 button {
@@ -17,6 +21,8 @@ button {
 
   font-size: 30px;
   font-weight: bold;
+
+  border: none;
 }
 
 button:hover {
@@ -74,17 +80,90 @@ h2 {
   position: relative;
 }
 
+/* Task Section */
+
 #add-task-button {
-  height: 40px;
-  width: 40px;
+  height: 60px;
+  width: 60px;
 
   position: absolute;
   right: 0;
   bottom: 0;
+
+  margin: 50px;
 }
 
 .task-container {
   flex: 1 1 0;
+
+  align-self: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  display: flex;
+  /* Make this variable based on priority and changeable */
+  border: var(--thin-border);
+  margin-bottom: 10px;
+}
+
+.red,
+.yellow,
+.green {
+  border-left: 10px solid;
+}
+
+.red {
+  border-left-color: rgb(253, 73, 73);
+}
+.yellow {
+  border-left-color: rgb(253, 241, 73);
+}
+.green {
+  border-left-color: rgb(73, 253, 100);
+}
+
+.checkbox {
+  transform: scale(2);
+  margin: 25px;
+}
+
+.data-sections {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border-left: var(--thin-border);
+
+  padding: 10px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  border-bottom: var(--thin-border);
+}
+
+.task-input-section {
+  display: flex;
+  align-items: flex-end;
+  gap: 25px;
+}
+
+button.task-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.bottom-section {
+  margin-top: 10px;
 }
 
 #add-project-button {

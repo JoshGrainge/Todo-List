@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <script src="./main.js" defer></script>
     <title>TODO App</title>
   </head>
@@ -16,17 +20,44 @@
           <p>Add project</p>
           <button id="add-project-button" class="circle-button">+</button>
         </div>
-        <div class="projects-panel">
-          <button class="project-button">ProjectTitle</button>
-        </div>
+        <div class="projects-panel"></div>
         <div class="settings-panel">
           <div>Settings</div>
           <div>About</div>
         </div>
       </div>
       <div class="content">
-        <h2>Project Title</h2>
-        <div class="task-container"></div>
+        <h2 id="project-title">Project Title</h2>
+        <div class="task-container">
+          <div class="task">
+            <input type="checkbox" class="checkbox" />
+            <div class="data-sections">
+              <div class="top-section">
+                <h3>Create the tables for the accounting department</h3>
+                <div class="task-input-section">
+                  <p>Due: 3/10/2022</p>
+                  <div class="task-buttons">
+                    <button class="task-button">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="task-button">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-section">
+                <p>
+                  Task description. This can fit suuuper long text and be really
+                  awesome for so many different thing. Especially run on
+                  sentences and thing of that nature I love writing to my hearts
+                  content inside these containers and they will just fill up and
+                  fill up and look pretty on the first try :)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         <button id="add-task-button" class="circle-button">+</button>
       </div>
     </div>
