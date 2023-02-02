@@ -1,13 +1,26 @@
+import {
+  getCurrentProject,
+  getProjectAtIndex,
+  getProjectLength,
+  setCurrentProjectIndex,
+} from "./projects";
+
 const projectContainer = document.querySelector(".projects-panel");
 const projectTitle = document.querySelector("#project-title");
 const taskContainer = document.querySelector(".task-container");
 
-function _createProjectElement(project) {
+function _createProjectElement(index) {
+  const project = getProjectAtIndex(index);
+
   const btn = document.createElement("button");
   btn.classList.add("project-button");
   btn.textContent = project.title;
 
-  // TODO set data on button for projects index value
+  // Updates project panel when project button is pressed
+  btn.addEventListener("click", () => {
+    setCurrentProjectIndex(index);
+    _updateProjectContainer(project);
+  });
 
   return btn;
 }
@@ -75,33 +88,38 @@ function _createTaskElement(task) {
   return taskDiv;
 }
 
+function _updateProjectContainer() {
+  _clearElements(taskContainer);
+
+  const currentProject = getCurrentProject();
+
+  projectTitle.textContent = currentProject.title;
+
+  for (const task of currentProject.tasks) {
+    taskContainer.appendChild(_createTaskElement(task));
+  }
+}
+
 function _clearElements(parent) {
   while (parent.lastElementChild) {
     parent.removeChild(parent.lastElementChild);
   }
 }
 
-function updateProjectElements(projects) {
+function updateProjectElements() {
   _clearElements(projectContainer);
 
-  for (const project of projects) {
-    projectContainer.appendChild(_createProjectElement(project));
+  let length = getProjectLength();
+  console.log("length: " + length);
+
+  for (let i = 0; i < length; i++) {
+    projectContainer.appendChild(_createProjectElement(i));
   }
 }
 
-function updateTaskElements(currentProject, projects) {
+function updateTaskElements() {
   _clearElements(taskContainer);
-  for (const task of currentProject.tasks) {
-    taskContainer.appendChild(_createTaskElement(task));
-  }
-}
-
-function updateProjectContainer(currentProject) {
-  _clearElements(taskContainer);
-
-  projectTitle.textContent = currentProject.title;
-
-  for (const task of currentProject.tasks) {
+  for (const task of getCurrentProject().tasks) {
     taskContainer.appendChild(_createTaskElement(task));
   }
 }
