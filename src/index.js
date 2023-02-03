@@ -9,18 +9,20 @@ import {
   updateTaskElements,
 } from "./DomManager";
 
-const addProjectBtn = document.querySelector("#add-project-button");
-const addTaskBtn = document.querySelector("#add-task-button");
+// Open model buttons
+const openProjectModalBtn = document.querySelector("#open-project-modal-btn");
+const openTaskModalBtn = document.querySelector("#open-task-modal-btn");
 
+// Add and Close buttons for project and task modals
 const addProjectModalBtn = document.querySelector("#add-project-btn");
 const closeAddProjectModalBtn = document.querySelector(
   "#close-project-modal-btn"
 );
-
 const addTaskModalBtn = document.querySelector("#add-task-modal-btn");
 const closeTaskModalBtn = document.querySelector("#close-task-modal-btn");
 
-addProjectBtn.addEventListener("click", showAddProjectModal);
+// Project modal event listeners
+openProjectModalBtn.addEventListener("click", showAddProjectModal);
 addProjectModalBtn.addEventListener("click", () => {
   addProject("Important project");
   updateProjectSidebarElements();
@@ -28,7 +30,8 @@ addProjectModalBtn.addEventListener("click", () => {
 });
 closeAddProjectModalBtn.addEventListener("click", hideProjectModal);
 
-addTaskBtn.addEventListener("click", () => {
+// Task modal event listeners
+openTaskModalBtn.addEventListener("click", () => {
   console.log("Add task button clicked");
   showAddTaskModal();
 });

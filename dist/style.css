@@ -84,7 +84,7 @@ button:active {
 
 /* Task Section */
 
-#add-task-button {
+#open-task-modal-btn {
   height: 60px;
   width: 60px;
 
@@ -168,7 +168,7 @@ button.task-button {
   margin-top: 10px;
 }
 
-#add-project-button {
+#open-project-modal-btn {
   height: 40px;
   width: 40px;
 }
