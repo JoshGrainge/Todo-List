@@ -1,5 +1,3 @@
-import { addProject, getCurrentProject } from "./projects";
-import { createTask } from "./tasks";
 import {
   hideAddTaskModal,
   hideProjectModal,
@@ -8,6 +6,7 @@ import {
   updateProjectSidebarElements,
   updateTaskElements,
 } from "./DomManager";
+import { submitProjectFields, submitTaskFields } from "./inputs";
 
 // Open model buttons
 const openProjectModalBtn = document.querySelector("#open-project-modal-btn");
@@ -24,7 +23,7 @@ const closeTaskModalBtn = document.querySelector("#close-task-modal-btn");
 // Project modal event listeners
 openProjectModalBtn.addEventListener("click", showAddProjectModal);
 addProjectModalBtn.addEventListener("click", () => {
-  addProject("Important project");
+  submitProjectFields();
   updateProjectSidebarElements();
   hideProjectModal();
 });
@@ -36,12 +35,8 @@ openTaskModalBtn.addEventListener("click", () => {
   showAddTaskModal();
 });
 addTaskModalBtn.addEventListener("click", () => {
-  getCurrentProject().tasks.push(
-    createTask("test", "this is a test", "02/02/22", "red")
-  );
-
+  submitTaskFields();
   updateTaskElements();
-
   hideAddTaskModal();
 });
 closeTaskModalBtn.addEventListener("click", hideAddTaskModal);
