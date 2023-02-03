@@ -124,4 +124,8 @@ function updateTaskElements() {
   }
 }
 
+function showAddProjectModal() {}
+
+function showAddTaskModal() {}
+
 export { updateProjectElements, updateTaskElements };

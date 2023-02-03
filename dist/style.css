@@ -38,7 +38,8 @@ button:active {
   border-radius: 50%;
 }
 
-h2 {
+.project-title > h2,
+.content > h2 {
   font-size: 50px;
   text-align: center;
   padding: 30px;
@@ -170,4 +171,61 @@ button.task-button {
 #add-project-button {
   height: 40px;
   width: 40px;
+}
+
+/* Add project modal */
+.add-project-modal-container {
+  visibility: hidden;
+
+  position: fixed;
+
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+  border: var(--thin-border);
+  border-radius: 25px;
+
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.project-name-input-section > input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.25rem;
+}
+
+/* Shared modal classes */
+.modal-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0003;
+  visibility: hidden;
+}
+
+.modal-title,
+.modal-buttons {
+  align-self: center;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 50px;
+}
+
+.show {
+  visibility: visible;
 }
