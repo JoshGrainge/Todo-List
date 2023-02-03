@@ -174,7 +174,7 @@ button.task-button {
 }
 
 /* Add project modal */
-.add-project-modal-container {
+.add-project-modal {
   visibility: hidden;
 
   position: fixed;

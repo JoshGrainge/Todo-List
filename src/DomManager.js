@@ -9,6 +9,9 @@ const projectContainer = document.querySelector(".projects-panel");
 const projectTitle = document.querySelector("#project-title");
 const taskContainer = document.querySelector(".task-container");
 
+const modalBg = document.querySelector(".modal-bg");
+const addProjectModal = document.querySelector(".add-project-modal");
+
 function _createProjectElement(index) {
   const project = getProjectAtIndex(index);
 
@@ -124,8 +127,21 @@ function updateTaskElements() {
   }
 }
 
-function showAddProjectModal() {}
+function showAddProjectModal() {
+  modalBg.classList.add("show");
+  addProjectModal.classList.add("show");
+}
+
+function hideProjectModal() {
+  modalBg.classList.remove("show");
+  addProjectModal.classList.remove("show");
+}
 
 function showAddTaskModal() {}
 
-export { updateProjectElements, updateTaskElements };
+export {
+  updateProjectElements,
+  updateTaskElements,
+  showAddProjectModal,
+  hideProjectModal,
+};
