@@ -109,7 +109,7 @@ function _clearElements(parent) {
   }
 }
 
-function updateProjectElements() {
+function updateProjectSidebarElements() {
   _clearElements(projectContainer);
 
   let length = getProjectLength();
@@ -140,7 +140,7 @@ function hideProjectModal() {
 function showAddTaskModal() {}
 
 export {
-  updateProjectElements,
+  updateProjectSidebarElements,
   updateTaskElements,
   showAddProjectModal,
   hideProjectModal,

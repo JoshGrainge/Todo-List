@@ -3,7 +3,7 @@ import { createTask } from "./tasks";
 import {
   hideProjectModal,
   showAddProjectModal,
-  updateProjectElements,
+  updateProjectSidebarElements,
   updateTaskElements,
 } from "./DomManager";
 
@@ -16,6 +16,11 @@ const closeAddProjectModalBtn = document.querySelector(
 );
 
 addProjectBtn.addEventListener("click", showAddProjectModal);
+
+addProjectModalBtn.addEventListener("click", () => {
+  addProject("Important project");
+  updateProjectSidebarElements();
+});
 
 closeAddProjectModalBtn.addEventListener("click", hideProjectModal);
 
