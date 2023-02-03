@@ -63,7 +63,7 @@
     </div>
 
     <div class="modal-bg"></div>
-    <div class="add-project-modal">
+    <div class="modal add-project-modal">
       <h2 class="modal-title">Add Project</h2>
       <div class="project-name-input-section">
         <p>Project name:</p>
@@ -72,6 +72,49 @@
       <div class="modal-buttons">
         <button id="add-project-btn">Add</button>
         <button id="close-project-modal-btn">Cancel</button>
+      </div>
+    </div>
+
+    <div class="modal add-task-modal">
+      <h2 class="modal-title">New Task</h2>
+      <div class="input-pair">
+        <p>Title:</p>
+        <input type="text" />
+      </div>
+      <div class="input-pair">
+        <p>Description:</p>
+        <input type="text" />
+      </div>
+      <div class="input-pair">
+        <p>Due date:</p>
+        <input type="date" />
+      </div>
+      <div class="radios">
+        <p>Priority:</p>
+        <div class="radio-options">
+          <div class="radio-pair">
+            <input
+              type="radio"
+              name="priority"
+              id="green"
+              value="green"
+              checked
+            />
+            <label for="green">Low</label>
+          </div>
+          <div class="radio-pair">
+            <input type="radio" name="priority" id="yellow" value="yellow" />
+            <label for="yellow">Medium</label>
+          </div>
+          <div class="radio-pair">
+            <input type="radio" name="priority" id="red" value="red" />
+            <label for="red">High</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-buttons">
+        <button id="add-task-btn">Add</button>
+        <button id="close-task-modal-btn">Cancel</button>
       </div>
     </div>
   </body>

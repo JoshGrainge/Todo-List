@@ -175,32 +175,43 @@ button.task-button {
 
 /* Add project modal */
 .add-project-modal {
-  visibility: hidden;
+}
 
-  position: fixed;
-
-  width: 500px;
-  height: 200px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  background-color: white;
-  border: var(--thin-border);
-  border-radius: 25px;
-
-  padding: 50px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: stretch;
+.project-name-input-section > p {
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .project-name-input-section > input {
   width: 100%;
   padding: 10px;
   font-size: 1.25rem;
+}
+
+/* Add task modal */
+
+.input-pair {
+}
+
+.input-pair > input {
+  width: 100%;
+  padding: 10px;
+}
+
+.input-pair > p,
+.radios > p {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.radios {
+  margin-bottom: 10px;
+}
+
+.radio-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Shared modal classes */
@@ -216,6 +227,28 @@ button.task-button {
   visibility: hidden;
 }
 
+.modal {
+  visibility: hidden;
+
+  position: fixed;
+
+  width: 500px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  background-color: white;
+  border: var(--thin-border);
+  border-radius: 25px;
+}
+
 .modal-title,
 .modal-buttons {
   align-self: center;
@@ -228,4 +261,10 @@ button.task-button {
 
 .show {
   visibility: visible;
+}
+
+/* add task modal override style */
+/* Needs to be added after modal classes declaration */
+.add-task-modal {
+  height: 300px;
 }
