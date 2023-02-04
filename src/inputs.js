@@ -1,4 +1,4 @@
-import { addProject, getCurrentProject } from "./projects";
+import { addProject, addTask, getCurrentProject } from "./projects";
 import { createTask } from "./tasks";
 
 // Add project fields
@@ -24,7 +24,7 @@ function submitTaskFields() {
   // Update priority radio object
   taskPriorityInput = document.querySelector("input[name='priority']:checked");
 
-  getCurrentProject().tasks.push(
+  addTask(
     createTask(
       taskTitleInput.value,
       taskDescriptionInput.value,

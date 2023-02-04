@@ -40,6 +40,10 @@ function getProjectLength() {
   return _projects.length;
 }
 
+function addTask(newTask) {
+  _projects[_currentProjectIndex].tasks.push(newTask);
+}
+
 function removeTask(index) {
   _projects[_currentProjectIndex].tasks.splice(index, 1);
 }
@@ -56,6 +60,7 @@ export {
   setCurrentProjectIndex,
   getProjectAtIndex,
   getProjectLength,
+  addTask,
   removeTask,
   editTask,
 };

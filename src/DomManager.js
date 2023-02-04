@@ -69,6 +69,8 @@ function _createTaskElement(task, taskIndex) {
   checked
   */
 
+  editBtn.addEventListener("click", () => {});
+
   deleteBtn.addEventListener("click", () => {
     removeTask(taskIndex);
     updateTaskElements();
