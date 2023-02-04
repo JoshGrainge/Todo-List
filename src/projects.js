@@ -18,8 +18,8 @@ function overrideProjectObject(project) {
 }
 
 function updateCurrentProjectValues(newTitle, newTasks) {
-  _projects[_currentProjectIndex].title = newTitle;
-  _projects[_currentProjectIndex].tasks = newTasks;
+  getCurrentProject().title = newTitle;
+  getCurrentProject().tasks = newTasks;
 }
 
 function getCurrentProject() {
@@ -40,16 +40,20 @@ function getProjectLength() {
   return _projects.length;
 }
 
+function getTask(taskIndex) {
+  return getCurrentProject().tasks[taskIndex];
+}
+
 function addTask(newTask) {
-  _projects[_currentProjectIndex].tasks.push(newTask);
+  getCurrentProject().tasks.push(newTask);
 }
 
 function removeTask(index) {
-  _projects[_currentProjectIndex].tasks.splice(index, 1);
+  getCurrentProject().tasks.splice(index, 1);
 }
 
 function editTask(index, newTask) {
-  _projects[_currentProjectIndex].tasks[index] = newTask;
+  getCurrentProject().tasks[index] = newTask;
 }
 
 export {
@@ -60,6 +64,7 @@ export {
   setCurrentProjectIndex,
   getProjectAtIndex,
   getProjectLength,
+  getTask,
   addTask,
   removeTask,
   editTask,

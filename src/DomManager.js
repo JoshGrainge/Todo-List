@@ -1,4 +1,9 @@
-import { submitTaskFields, submitUpdatesTaskFields } from "./inputs";
+import {
+  clearTaskInputFields,
+  populateTaskFieldsWithTaskText,
+  submitTaskFields,
+  submitUpdatesTaskFields,
+} from "./inputs";
 import {
   getCurrentProject,
   getProjectAtIndex,
@@ -138,6 +143,8 @@ function hideProjectModal() {
 function showAddTaskModal() {
   _openTaskModal();
 
+  clearTaskInputFields();
+
   document
     .querySelector("#add-task-modal-btn")
     .addEventListener("click", () => {
@@ -154,6 +161,8 @@ function hideAddTaskModal() {
 
 function _showEditTaskModal(taskIndex) {
   _openTaskModal();
+
+  populateTaskFieldsWithTaskText(taskIndex);
 
   document
     .querySelector("#add-task-modal-btn")
