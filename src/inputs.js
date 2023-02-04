@@ -36,7 +36,7 @@ function submitTaskFields() {
   taskTitleInput.value = "";
   taskDescriptionInput.value = "";
   taskDueDateInput.value = "";
-  taskPriorityInput.value = "";
+  taskPriorityInput.checked = false;
 
   defaultPriorityRadio.checked = true;
 }

@@ -99,6 +99,10 @@ function _updateProjectContainer() {
 
   projectTitle.textContent = currentProject.title;
 
+  // TODO remove the repeating code of this section and updateTaskElements section.
+  // They essentially do the same code, but for some reason just replacing this section
+  // causes errors where when you add a project, add a task to the project, add another project
+  // add mutliple tasks to that project it would cause an error
   for (const task of currentProject.tasks) {
     taskContainer.appendChild(_createTaskElement(task));
   }
