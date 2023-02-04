@@ -2,6 +2,7 @@ import {
   getCurrentProject,
   getProjectAtIndex,
   getProjectLength,
+  removeTask,
   setCurrentProjectIndex,
 } from "./projects";
 
@@ -29,7 +30,7 @@ function _createProjectElement(index) {
   return btn;
 }
 
-function _createTaskElement(task) {
+function _createTaskElement(task, taskIndex) {
   const taskDiv = document.createElement("div");
   const checkbox = document.createElement("input");
   const dataSection = document.createElement("div");
@@ -67,6 +68,11 @@ function _createTaskElement(task) {
   prio
   checked
   */
+
+  deleteBtn.addEventListener("click", () => {
+    removeTask(taskIndex);
+    updateTaskElements();
+  });
 
   // Set task values to element
   checkbox.checked = task.checked;
@@ -117,8 +123,10 @@ function updateProjectSidebarElements() {
 
 function updateTaskElements() {
   _clearElements(taskContainer);
+  let index = 0;
   for (const task of getCurrentProject().tasks) {
-    taskContainer.appendChild(_createTaskElement(task));
+    taskContainer.appendChild(_createTaskElement(task, index));
+    index++;
   }
 }
 

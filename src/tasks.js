@@ -1,4 +1,4 @@
-export function createTask(title, description, dueDate, priority) {
+function createTask(title, description, dueDate, priority) {
   return {
     title,
     description,
@@ -9,3 +9,5 @@ export function createTask(title, description, dueDate, priority) {
 }
 
 // TODO make update task function
+
+export { createTask };

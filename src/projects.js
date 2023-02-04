@@ -40,6 +40,14 @@ function getProjectLength() {
   return _projects.length;
 }
 
+function removeTask(index) {
+  _projects[_currentProjectIndex].tasks.splice(index, 1);
+}
+
+function editTask(index, newTask) {
+  _projects[_currentProjectIndex].tasks[index] = newTask;
+}
+
 export {
   addProject,
   overrideProjectObject,
@@ -48,4 +56,6 @@ export {
   setCurrentProjectIndex,
   getProjectAtIndex,
   getProjectLength,
+  removeTask,
+  editTask,
 };
