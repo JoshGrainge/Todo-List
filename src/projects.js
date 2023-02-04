@@ -45,15 +45,15 @@ function getTask(taskIndex) {
 }
 
 function addTask(newTask) {
-  getCurrentProject().tasks.push(newTask);
+  _projects[_currentProjectIndex].tasks.push(newTask);
 }
 
 function removeTask(index) {
-  getCurrentProject().tasks.splice(index, 1);
+  _projects[_currentProjectIndex].tasks.splice(index, 1);
 }
 
 function editTask(index, newTask) {
-  getCurrentProject().tasks[index] = newTask;
+  _projects[_currentProjectIndex].tasks[index] = newTask;
 }
 
 export {
