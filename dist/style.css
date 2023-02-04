@@ -8,7 +8,9 @@
   --button-hover-color: rgb(79, 199, 255);
   --button-click-color: rgb(0, 137, 201);
 
+  /* Update the colors here to use theme colors */
   --thin-border: 1px solid black;
+  --thick-border: 5px solid black;
 
   font-family: Helvetica, monospace, sans-serif;
 
@@ -57,12 +59,17 @@ button:active {
   display: grid;
   max-height: 100vh;
   grid-template-rows: 2fr 1fr 8fr 2fr;
+
+  border-right: var(--thick-border);
 }
 
 .add-button-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  border-top: var(--thick-border);
+  border-bottom: var(--thick-border);
 }
 
 .projects-panel {
@@ -171,6 +178,8 @@ button.task-button {
 #open-project-modal-btn {
   height: 40px;
   width: 40px;
+
+  margin-left: 10px;
 }
 
 /* Add project modal */
@@ -260,4 +269,23 @@ button.task-button {
 /* Needs to be added after modal classes declaration */
 .add-task-modal {
   height: 300px;
+}
+
+/* Settings section */
+.settings-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  border-top: var(--thick-border);
+}
+
+.settings-panel > button {
+  width: 100%;
+  height: 100%;
+  margin: 1px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
