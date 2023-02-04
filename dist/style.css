@@ -267,7 +267,8 @@ button.task-button {
   gap: 50px;
 }
 
-.show {
+.show,
+#open-task-modal-btn.show {
   visibility: visible;
 }
 

@@ -20,6 +20,8 @@ const modalBg = document.querySelector(".modal-bg");
 const addProjectModal = document.querySelector(".add-project-modal");
 const addTaskModal = document.querySelector(".add-task-modal");
 
+const openTaskModalButton = document.querySelector("#open-task-modal-btn");
+
 function _createProjectElement(index) {
   const project = getProjectAtIndex(index);
 
@@ -29,6 +31,9 @@ function _createProjectElement(index) {
 
   // Updates project panel when project button is pressed
   btn.addEventListener("click", () => {
+    // Set add task button to be visible
+    openTaskModalButton.classList.add("show");
+
     setCurrentProjectIndex(index);
     _updateProjectContainer(project);
   });
