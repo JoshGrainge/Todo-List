@@ -174,9 +174,6 @@ button.task-button {
 }
 
 /* Add project modal */
-.add-project-modal {
-}
-
 .project-name-input-section > p {
   font-weight: bold;
   margin-bottom: 10px;
@@ -189,10 +186,6 @@ button.task-button {
 }
 
 /* Add task modal */
-
-.input-pair {
-}
-
 .input-pair > input {
   width: 100%;
   padding: 10px;

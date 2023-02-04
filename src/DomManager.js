@@ -1,3 +1,4 @@
+import { submitTaskFields, submitUpdatesTaskFields } from "./inputs";
 import {
   getCurrentProject,
   getProjectAtIndex,
@@ -61,19 +62,13 @@ function _createTaskElement(task, taskIndex) {
 
   checkbox.type = "checkbox";
 
-  /*
-  title
-  description
-  date
-  prio
-  checked
-  */
-
-  editBtn.addEventListener("click", () => {});
+  editBtn.addEventListener("click", () => {
+    _showEditTaskModal(taskIndex);
+  });
 
   deleteBtn.addEventListener("click", () => {
     removeTask(taskIndex);
-    updateTaskElements();
+    _updateTaskElements();
   });
 
   // Set task values to element
@@ -103,7 +98,7 @@ function _createTaskElement(task, taskIndex) {
 function _updateProjectContainer() {
   const currentProject = getCurrentProject();
   projectTitle.textContent = currentProject.title;
-  updateTaskElements();
+  _updateTaskElements();
 }
 
 function _clearElements(parent) {
@@ -116,14 +111,12 @@ function updateProjectSidebarElements() {
   _clearElements(projectContainer);
 
   let length = getProjectLength();
-  console.log("length: " + length);
-
   for (let i = 0; i < length; i++) {
     projectContainer.appendChild(_createProjectElement(i));
   }
 }
 
-function updateTaskElements() {
+function _updateTaskElements() {
   _clearElements(taskContainer);
   let index = 0;
   for (const task of getCurrentProject().tasks) {
@@ -143,8 +136,15 @@ function hideProjectModal() {
 }
 
 function showAddTaskModal() {
-  modalBg.classList.add("show");
-  addTaskModal.classList.add("show");
+  _openTaskModal();
+
+  document
+    .querySelector("#add-task-modal-btn")
+    .addEventListener("click", () => {
+      submitTaskFields();
+      _updateTaskElements();
+      hideAddTaskModal();
+    });
 }
 
 function hideAddTaskModal() {
@@ -152,9 +152,32 @@ function hideAddTaskModal() {
   addTaskModal.classList.remove("show");
 }
 
+function _showEditTaskModal(taskIndex) {
+  _openTaskModal();
+
+  document
+    .querySelector("#add-task-modal-btn")
+    .addEventListener("click", () => {
+      submitUpdatesTaskFields(taskIndex);
+      _updateTaskElements();
+      hideAddTaskModal();
+    });
+}
+
+function _openTaskModal() {
+  modalBg.classList.add("show");
+  addTaskModal.classList.add("show");
+
+  _resetModalEventListeners();
+}
+
+function _resetModalEventListeners() {
+  let btn = document.querySelector("#add-task-modal-btn");
+  btn.replaceWith(btn.cloneNode(true));
+}
+
 export {
   updateProjectSidebarElements,
-  updateTaskElements,
   showAddProjectModal,
   hideProjectModal,
   showAddTaskModal,

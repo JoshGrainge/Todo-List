@@ -1,4 +1,4 @@
-import { addProject, addTask, getCurrentProject } from "./projects";
+import { addProject, addTask, editTask, getCurrentProject } from "./projects";
 import { createTask } from "./tasks";
 
 // Add project fields
@@ -21,8 +21,7 @@ function submitProjectFields() {
 }
 
 function submitTaskFields() {
-  // Update priority radio object
-  taskPriorityInput = document.querySelector("input[name='priority']:checked");
+  _updateTaskPriorityInput();
 
   addTask(
     createTask(
@@ -33,6 +32,30 @@ function submitTaskFields() {
     )
   );
 
+  _resetFields();
+}
+
+function submitUpdatesTaskFields(taskIndex) {
+  _updateTaskPriorityInput();
+
+  editTask(
+    taskIndex,
+    createTask(
+      taskTitleInput.value,
+      taskDescriptionInput.value,
+      taskDueDateInput.value,
+      taskPriorityInput.value
+    )
+  );
+
+  _resetFields();
+}
+
+function _updateTaskPriorityInput() {
+  taskPriorityInput = document.querySelector("input[name='priority']:checked");
+}
+
+function _resetFields() {
   taskTitleInput.value = "";
   taskDescriptionInput.value = "";
   taskDueDateInput.value = "";
@@ -41,4 +64,4 @@ function submitTaskFields() {
   defaultPriorityRadio.checked = true;
 }
 
-export { submitProjectFields, submitTaskFields };
+export { submitProjectFields, submitTaskFields, submitUpdatesTaskFields };

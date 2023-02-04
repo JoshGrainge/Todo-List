@@ -4,7 +4,6 @@ import {
   showAddProjectModal,
   showAddTaskModal,
   updateProjectSidebarElements,
-  updateTaskElements,
 } from "./DomManager";
 import { submitProjectFields, submitTaskFields } from "./inputs";
 
@@ -17,7 +16,7 @@ const addProjectModalBtn = document.querySelector("#add-project-btn");
 const closeAddProjectModalBtn = document.querySelector(
   "#close-project-modal-btn"
 );
-const addTaskModalBtn = document.querySelector("#add-task-modal-btn");
+//const addTaskModalBtn = document.querySelector("#add-task-modal-btn");
 const closeTaskModalBtn = document.querySelector("#close-task-modal-btn");
 
 // Project modal event listeners
@@ -34,9 +33,5 @@ openTaskModalBtn.addEventListener("click", () => {
   console.log("Add task button clicked");
   showAddTaskModal();
 });
-addTaskModalBtn.addEventListener("click", () => {
-  submitTaskFields();
-  updateTaskElements();
-  hideAddTaskModal();
-});
+
 closeTaskModalBtn.addEventListener("click", hideAddTaskModal);
