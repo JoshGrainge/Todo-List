@@ -13,8 +13,6 @@
   --thick-border: 5px solid black;
 
   font-family: Helvetica, monospace, sans-serif;
-
-  /* border: 1px solid black; */
 }
 
 button {
@@ -98,6 +96,8 @@ button:active {
 /* Task Section */
 
 #open-task-modal-btn {
+  visibility: hidden;
+
   height: 60px;
   width: 60px;
 
