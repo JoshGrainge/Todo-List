@@ -89,6 +89,8 @@ function _createTaskElement(task, taskIndex) {
     );
     newTask.checked = checkbox.checked;
     editTask(taskIndex, newTask);
+
+    saveProjectsPersistentData();
   });
 
   editBtn.addEventListener("click", () => {
