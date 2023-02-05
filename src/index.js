@@ -10,6 +10,7 @@ import {
   updateProjectSidebarElements,
 } from "./DomManager";
 import { submitProjectFields, submitTaskFields } from "./inputs";
+import { getCurrentProject, getTask } from "./projects";
 import { changeTheme } from "./themes";
 
 // Open model buttons

@@ -5,12 +5,14 @@ import {
   submitUpdatesTaskFields,
 } from "./inputs";
 import {
+  editTask,
   getCurrentProject,
   getProjectAtIndex,
   getProjectLength,
   removeTask,
   setCurrentProjectIndex,
 } from "./projects";
+import { createTask } from "./tasks";
 
 const projectContainer = document.querySelector(".projects-panel");
 const projectTitle = document.querySelector("#project-title");
@@ -75,6 +77,18 @@ function _createTaskElement(task, taskIndex) {
   bottomSection.classList.add("bottom-section");
 
   checkbox.type = "checkbox";
+
+  //Update task when checked
+  checkbox.addEventListener("change", () => {
+    let newTask = createTask(
+      task.title,
+      task.description,
+      task.dueDate,
+      task.priority
+    );
+    newTask.checked = checkbox.checked;
+    editTask(taskIndex, newTask);
+  });
 
   editBtn.addEventListener("click", () => {
     _showEditTaskModal(taskIndex);
