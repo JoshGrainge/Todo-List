@@ -1,7 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-
+:root {
+  --background-color: #fff;
+  --modal-background-color: #0003;
+  --text-color: #000;
   --button-color: rgb(0, 174, 255);
   --button-text-color: #fff;
 
@@ -9,10 +9,20 @@
   --button-click-color: rgb(0, 137, 201);
 
   /* Update the colors here to use theme colors */
-  --thin-border: 1px solid black;
-  --thick-border: 5px solid black;
+  --thin-border: 1px solid var(--text-color);
+  --thick-border: 5px solid var(--text-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
 
   font-family: Helvetica, monospace, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 button {
@@ -235,7 +245,7 @@ button.task-button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #0003;
+  background-color: var(--modal-background-color);
   visibility: hidden;
 }
 
@@ -256,7 +266,7 @@ button.task-button {
   flex-direction: column;
   justify-content: space-around;
 
-  background-color: white;
+  background-color: var(--background-color);
   border: var(--thin-border);
   border-radius: 25px;
 }

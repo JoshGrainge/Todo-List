@@ -10,6 +10,7 @@ import {
   updateProjectSidebarElements,
 } from "./DomManager";
 import { submitProjectFields, submitTaskFields } from "./inputs";
+import { changeTheme } from "./themes";
 
 // Open model buttons
 const openProjectModalBtn = document.querySelector("#open-project-modal-btn");
@@ -52,3 +53,10 @@ closeSettingsModalBtn.addEventListener("click", hideSettingsModal);
 
 openAboutModalBtn.addEventListener("click", showAboutModal);
 closeAboutModalBtn.addEventListener("click", hideAboutModal);
+
+// Theme selector
+const themeSelector = document.querySelector("#themes");
+
+themeSelector.addEventListener("change", () => {
+  changeTheme(themeSelector.value);
+});
