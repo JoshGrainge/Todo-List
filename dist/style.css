@@ -302,6 +302,16 @@ button.task-button {
   border-radius: 0;
 }
 
+/* Settings modal section */
+.settings-modal {
+  align-items: center;
+  justify-content: space-between;
+}
+
+#themes {
+  flex-grow: 1;
+}
+
 /* About modal section */
 .about-modal {
   align-items: center;
