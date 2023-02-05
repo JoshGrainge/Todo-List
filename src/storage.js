@@ -1,4 +1,4 @@
-import { getAllProjects, loadProjects } from "./projects";
+import { clearProjets, getAllProjects, loadProjects } from "./projects";
 import { loadTheme } from "./themes";
 
 const projectsKey = "projects";
@@ -28,6 +28,7 @@ function saveThemePersistenData() {
 }
 
 function clearLocalStorage() {
+  clearProjets();
   localStorage.clear();
 }
 

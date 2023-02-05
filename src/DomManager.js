@@ -130,6 +130,12 @@ function _updateProjectContainer() {
   _updateTaskElements();
 }
 
+function clearProjectPanel() {
+  projectTitle.textContent = "";
+  _updateTaskElements();
+  openTaskModalButton.classList.remove("show");
+}
+
 function _clearElements(parent) {
   while (parent.lastElementChild) {
     parent.removeChild(parent.lastElementChild);
@@ -148,9 +154,11 @@ function updateProjectSidebarElements() {
 function _updateTaskElements() {
   _clearElements(taskContainer);
   let index = 0;
-  for (const task of getCurrentProject().tasks) {
-    taskContainer.appendChild(_createTaskElement(task, index));
-    index++;
+  if (getCurrentProject()) {
+    for (const task of getCurrentProject().tasks) {
+      taskContainer.appendChild(_createTaskElement(task, index));
+      index++;
+    }
   }
 }
 
@@ -243,6 +251,7 @@ function _hideModalBackground() {
 }
 
 export {
+  clearProjectPanel,
   updateProjectSidebarElements,
   showAddProjectModal,
   hideProjectModal,

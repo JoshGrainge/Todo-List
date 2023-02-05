@@ -12,6 +12,11 @@ function loadProjects(newProjects) {
   _projects = newProjects;
 }
 
+function clearProjets() {
+  _projects = [];
+  _currentProjectIndex = -1;
+}
+
 function addProject(title) {
   _projects.push(_createProject(title));
   _currentProjectIndex++;
@@ -66,6 +71,7 @@ function editTask(index, newTask) {
 
 export {
   loadProjects,
+  clearProjets,
   addProject,
   overrideProjectObject,
   updateCurrentProjectValues,

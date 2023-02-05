@@ -318,6 +318,10 @@ button.task-button {
   justify-content: space-between;
 }
 
+.settings-modal > button {
+  width: 50%;
+}
+
 /* About modal section */
 .about-modal {
   align-items: center;

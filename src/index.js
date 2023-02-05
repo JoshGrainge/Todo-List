@@ -1,4 +1,5 @@
 import {
+  clearProjectPanel,
   hideAboutModal,
   hideAddTaskModal,
   hideProjectModal,
@@ -11,6 +12,7 @@ import {
 } from "./DomManager";
 import { submitProjectFields, submitTaskFields } from "./inputs";
 import {
+  clearLocalStorage,
   loadPersistentData,
   saveProjectsPersistentData,
   saveThemePersistenData,
@@ -70,4 +72,11 @@ const themeSelector = document.querySelector("#themes");
 themeSelector.addEventListener("change", () => {
   changeTheme(themeSelector.value);
   saveThemePersistenData();
+});
+
+const clearStorageBtn = document.querySelector("#clear-storage-btn");
+clearStorageBtn.addEventListener("click", () => {
+  clearLocalStorage();
+  updateProjectSidebarElements();
+  clearProjectPanel();
 });
