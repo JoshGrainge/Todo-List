@@ -282,7 +282,7 @@ button.task-button {
   height: 300px;
 }
 
-/* Settings section */
+/* Settings and About buttons section */
 .settings-panel {
   display: flex;
   flex-direction: column;
@@ -302,7 +302,7 @@ button.task-button {
   border-radius: 0;
 }
 
-/* About info section */
+/* About modal section */
 .about-modal {
   align-items: center;
 }
