@@ -2,9 +2,11 @@ import {
   hideAboutModal,
   hideAddTaskModal,
   hideProjectModal,
+  hideSettingsModal,
   showAboutModal,
   showAddProjectModal,
   showAddTaskModal,
+  showSettingsModal,
   updateProjectSidebarElements,
 } from "./DomManager";
 import { submitProjectFields, submitTaskFields } from "./inputs";
@@ -20,6 +22,11 @@ const closeAddProjectModalBtn = document.querySelector(
 );
 const closeTaskModalBtn = document.querySelector("#close-task-modal-btn");
 
+// Settings buttons
+const openSettingsModalBtn = document.querySelector("#open-settings-btn");
+const closeSettingsModalBtn = document.querySelector("#close-settings-btn");
+
+// About buttons
 const openAboutModalBtn = document.querySelector("#open-about-btn");
 const closeAboutModalBtn = document.querySelector("#close-about-btn");
 
@@ -39,6 +46,9 @@ openTaskModalBtn.addEventListener("click", () => {
 });
 
 closeTaskModalBtn.addEventListener("click", hideAddTaskModal);
+
+openSettingsModalBtn.addEventListener("click", showSettingsModal);
+closeSettingsModalBtn.addEventListener("click", hideSettingsModal);
 
 openAboutModalBtn.addEventListener("click", showAboutModal);
 closeAboutModalBtn.addEventListener("click", hideAboutModal);

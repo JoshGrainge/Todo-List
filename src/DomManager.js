@@ -22,6 +22,7 @@ const addTaskModal = document.querySelector(".add-task-modal");
 
 const openTaskModalButton = document.querySelector("#open-task-modal-btn");
 
+const settingsModal = document.querySelector("#settings-modal");
 const aboutModal = document.querySelector("#about-info-modal");
 
 function _createProjectElement(index) {
@@ -202,6 +203,16 @@ function hideAboutModal() {
   aboutModal.classList.remove("show");
 }
 
+function showSettingsModal() {
+  _showModalBackground();
+  settingsModal.classList.add("show");
+}
+
+function hideSettingsModal() {
+  _hideModalBackground();
+  settingsModal.classList.remove("show");
+}
+
 function _showModalBackground() {
   modalBg.classList.add("show");
 }
@@ -215,6 +226,8 @@ export {
   hideProjectModal,
   showAddTaskModal,
   hideAddTaskModal,
+  showSettingsModal,
+  hideSettingsModal,
   showAboutModal,
   hideAboutModal,
 };
