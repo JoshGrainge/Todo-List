@@ -10,8 +10,16 @@ import {
   updateProjectSidebarElements,
 } from "./DomManager";
 import { submitProjectFields, submitTaskFields } from "./inputs";
-import { getCurrentProject, getTask } from "./projects";
+import {
+  loadPersistentData,
+  saveProjectsPersistentData,
+  saveThemePersistenData,
+} from "./storage";
 import { changeTheme } from "./themes";
+
+// Load persistent data
+loadPersistentData();
+updateProjectSidebarElements();
 
 // Open model buttons
 const openProjectModalBtn = document.querySelector("#open-project-modal-btn");
@@ -38,6 +46,7 @@ addProjectModalBtn.addEventListener("click", () => {
   submitProjectFields();
   updateProjectSidebarElements();
   hideProjectModal();
+  saveProjectsPersistentData();
 });
 closeAddProjectModalBtn.addEventListener("click", hideProjectModal);
 
@@ -60,4 +69,5 @@ const themeSelector = document.querySelector("#themes");
 
 themeSelector.addEventListener("change", () => {
   changeTheme(themeSelector.value);
+  saveThemePersistenData();
 });

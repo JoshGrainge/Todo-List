@@ -80,4 +80,8 @@ function _setThemeValues(
   root.style.setProperty("--button-click-color", buttonClickColor);
 }
 
-export { changeTheme };
+function loadTheme(themeString) {
+  changeTheme(themeString);
+}
+
+export { changeTheme, loadTheme };

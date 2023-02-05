@@ -12,6 +12,7 @@ import {
   removeTask,
   setCurrentProjectIndex,
 } from "./projects";
+import { saveProjectsPersistentData } from "./storage";
 import { createTask } from "./tasks";
 
 const projectContainer = document.querySelector(".projects-panel");
@@ -176,6 +177,7 @@ function showAddTaskModal() {
       submitTaskFields();
       _updateTaskElements();
       hideAddTaskModal();
+      saveProjectsPersistentData();
     });
 }
 
@@ -197,6 +199,7 @@ function _showEditTaskModal(taskIndex) {
       submitUpdatesTaskFields(taskIndex);
       _updateTaskElements();
       hideAddTaskModal();
+      saveProjectsPersistentData();
     });
 }
 

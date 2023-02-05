@@ -8,6 +8,10 @@ function _createProject(title) {
   };
 }
 
+function loadProjects(newProjects) {
+  _projects = newProjects;
+}
+
 function addProject(title) {
   _projects.push(_createProject(title));
   _currentProjectIndex++;
@@ -40,6 +44,10 @@ function getProjectLength() {
   return _projects.length;
 }
 
+function getAllProjects() {
+  return _projects;
+}
+
 function getTask(taskIndex) {
   return getCurrentProject().tasks[taskIndex];
 }
@@ -57,6 +65,7 @@ function editTask(index, newTask) {
 }
 
 export {
+  loadProjects,
   addProject,
   overrideProjectObject,
   updateCurrentProjectValues,
@@ -64,6 +73,7 @@ export {
   setCurrentProjectIndex,
   getProjectAtIndex,
   getProjectLength,
+  getAllProjects,
   getTask,
   addTask,
   removeTask,
