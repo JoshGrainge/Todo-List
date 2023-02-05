@@ -22,6 +22,8 @@ const addTaskModal = document.querySelector(".add-task-modal");
 
 const openTaskModalButton = document.querySelector("#open-task-modal-btn");
 
+const aboutModal = document.querySelector("#about-info-modal");
+
 function _createProjectElement(index) {
   const project = getProjectAtIndex(index);
 
@@ -136,12 +138,12 @@ function _updateTaskElements() {
 }
 
 function showAddProjectModal() {
-  modalBg.classList.add("show");
+  _showModalBackground();
   addProjectModal.classList.add("show");
 }
 
 function hideProjectModal() {
-  modalBg.classList.remove("show");
+  _hideModalBackground();
   addProjectModal.classList.remove("show");
 }
 
@@ -160,7 +162,7 @@ function showAddTaskModal() {
 }
 
 function hideAddTaskModal() {
-  modalBg.classList.remove("show");
+  _hideModalBackground();
   addTaskModal.classList.remove("show");
 }
 
@@ -179,7 +181,7 @@ function _showEditTaskModal(taskIndex) {
 }
 
 function _openTaskModal() {
-  modalBg.classList.add("show");
+  _showModalBackground();
   addTaskModal.classList.add("show");
 
   _resetModalEventListeners();
@@ -190,10 +192,29 @@ function _resetModalEventListeners() {
   btn.replaceWith(btn.cloneNode(true));
 }
 
+function showAboutModal() {
+  _showModalBackground();
+  aboutModal.classList.add("show");
+}
+
+function hideAboutModal() {
+  _hideModalBackground();
+  aboutModal.classList.remove("show");
+}
+
+function _showModalBackground() {
+  modalBg.classList.add("show");
+}
+function _hideModalBackground() {
+  modalBg.classList.remove("show");
+}
+
 export {
   updateProjectSidebarElements,
   showAddProjectModal,
   hideProjectModal,
   showAddTaskModal,
   hideAddTaskModal,
+  showAboutModal,
+  hideAboutModal,
 };

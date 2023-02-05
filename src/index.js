@@ -1,6 +1,8 @@
 import {
+  hideAboutModal,
   hideAddTaskModal,
   hideProjectModal,
+  showAboutModal,
   showAddProjectModal,
   showAddTaskModal,
   updateProjectSidebarElements,
@@ -16,8 +18,10 @@ const addProjectModalBtn = document.querySelector("#add-project-btn");
 const closeAddProjectModalBtn = document.querySelector(
   "#close-project-modal-btn"
 );
-//const addTaskModalBtn = document.querySelector("#add-task-modal-btn");
 const closeTaskModalBtn = document.querySelector("#close-task-modal-btn");
+
+const openAboutModalBtn = document.querySelector("#open-about-btn");
+const closeAboutModalBtn = document.querySelector("#close-about-btn");
 
 // Project modal event listeners
 openProjectModalBtn.addEventListener("click", showAddProjectModal);
@@ -35,3 +39,6 @@ openTaskModalBtn.addEventListener("click", () => {
 });
 
 closeTaskModalBtn.addEventListener("click", hideAddTaskModal);
+
+openAboutModalBtn.addEventListener("click", showAboutModal);
+closeAboutModalBtn.addEventListener("click", hideAboutModal);

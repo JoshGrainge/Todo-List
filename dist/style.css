@@ -301,3 +301,8 @@ button.task-button {
   padding: 0 20px;
   border-radius: 0;
 }
+
+/* About info section */
+.about-modal {
+  align-items: center;
+}

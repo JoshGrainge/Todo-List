@@ -22,8 +22,12 @@
         </div>
         <div class="projects-panel"></div>
         <div class="settings-panel">
-          <button>Settings <i class="fa fa-cog"></i></button>
-          <button>About <i class="fa fa-info-circle"></i></button>
+          <button id="open-settings-btn">
+            Settings <i class="fa fa-cog"></i>
+          </button>
+          <button id="open-about-btn">
+            About <i class="fa fa-info-circle"></i>
+          </button>
         </div>
       </div>
       <div class="content">
@@ -89,6 +93,16 @@
         <button id="add-task-modal-btn">Add</button>
         <button id="close-task-modal-btn">Cancel</button>
       </div>
+    </div>
+
+    <div id="about-info-modal" class="modal about-modal">
+      <h2>About</h2>
+      <p>
+        This TODO app was created by Josh Grainge when taking The Odin Project
+        course online. The repository can be found
+        <a href="https://github.com/JoshGrainge/Todo-List">here.</a>
+      </p>
+      <button id="close-about-btn">Close</button>
     </div>
   </body>
 </html>
