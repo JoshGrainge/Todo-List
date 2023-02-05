@@ -21,6 +21,7 @@ const addProjectModal = document.querySelector(".add-project-modal");
 const addTaskModal = document.querySelector(".add-task-modal");
 
 const openTaskModalButton = document.querySelector("#open-task-modal-btn");
+const taskModalTitle = document.querySelector("#task-modal-title");
 
 const settingsModal = document.querySelector("#settings-modal");
 const aboutModal = document.querySelector("#about-info-modal");
@@ -153,6 +154,8 @@ function showAddTaskModal() {
 
   clearTaskInputFields();
 
+  taskModalTitle.textContent = "Add Task";
+
   document
     .querySelector("#add-task-modal-btn")
     .addEventListener("click", () => {
@@ -169,6 +172,8 @@ function hideAddTaskModal() {
 
 function _showEditTaskModal(taskIndex) {
   _openTaskModal();
+
+  taskModalTitle.textContent = "Edit Task";
 
   populateTaskFieldsWithTaskText(taskIndex);
 
