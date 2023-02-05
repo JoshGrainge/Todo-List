@@ -308,10 +308,6 @@ button.task-button {
   justify-content: space-between;
 }
 
-#themes {
-  flex-grow: 1;
-}
-
 /* About modal section */
 .about-modal {
   align-items: center;
