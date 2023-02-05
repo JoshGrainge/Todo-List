@@ -100,6 +100,7 @@ function _createTaskElement(task, taskIndex) {
   deleteBtn.addEventListener("click", () => {
     removeTask(taskIndex);
     _updateTaskElements();
+    saveProjectsPersistentData();
   });
 
   // Set task values to element
